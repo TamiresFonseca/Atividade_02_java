@@ -26,6 +26,20 @@ import java.util.Scanner;
                 menu(produtoFacade);
             }
 
+        public boolean vender(int id) {
+                Produto produto = produtoRepository.buscarPorId(id);
+                if (produto != null) {
+                    produtoRepository.remover(id);
+                    System.out.println("Produto vendido com sucesso: " + produto.getDescricao());
+                    return true;
+                } else {
+                    System.out.println("Produto não encontrado.");
+                    return false;
+        }
+
+
+    }
+
             public static void menu(ProdutoFacade produtoFacade) {
                 Scanner scanner = new Scanner(System.in);
                 int opcao;
