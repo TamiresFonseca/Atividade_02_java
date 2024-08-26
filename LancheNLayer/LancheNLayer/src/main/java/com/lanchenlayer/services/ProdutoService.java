@@ -1,6 +1,7 @@
 package com.lanchenlayer.services;
 
 import com.lanchenlayer.entities.Produto;
+import com.lanchenlayer.interfaces.IProdutoService;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -8,9 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-/*- Implementar na classe ProdutoService os métodos RemoverImagem(), atualizar()
- */
-public class ProdutoService {
+
+public class ProdutoService implements IProdutoService {
     private String caminhoDestino = "C:\\Users\\aluno\\LancheNLayer\\src\\main\\resources\\images\\";
 
     public static String getFileExtension(String filePath) {

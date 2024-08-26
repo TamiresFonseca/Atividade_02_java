@@ -1,10 +1,11 @@
 package com.lanchenlayer.repositories;
 
 import com.lanchenlayer.entities.Produto;
+import com.lanchenlayer.interfaces.IProdutoRepository;
 
 import java.util.ArrayList;
 
-public class ProdutoRepository {
+public class ProdutoRepository implements IProdutoRepository {
     private ArrayList<Produto> produtos = new ArrayList<Produto>();
 
     public void adicionar(Produto produto) {
@@ -21,9 +22,6 @@ public class ProdutoRepository {
     public ArrayList<Produto> buscarTodos() {
         return produtos;
     }
-
-    /*- Implementar o método atualizar() em ProdutoRepository para atualizar
-as informações do produto como descrição, preco e imagem*/
 
     public boolean atualizar(int id, String descricao, float preco, String imagem) {
         Produto produto = buscarPorId(id);
